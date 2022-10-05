@@ -11,4 +11,4 @@ stage('continuous donwload')
     sh 'mvn package'
     } 
     
-   
+},
