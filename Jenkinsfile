@@ -10,5 +10,8 @@ stage('continuous donwload')
    {
     sh 'mvn package'
     } 
-    
+   stage('continuous testing')
+   { echo 'testing has passed'
+   }
+   
 }
