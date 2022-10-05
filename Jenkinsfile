@@ -13,5 +13,9 @@ stage('continuous donwload')
    stage('continuous testing')
    { echo 'testing has passed'
    }
-   
+    stage('continuous deployment')
+   {
+   deploy adapters: [tomcat8(credentialsId: 'dev', path: '', url: 'http://172.31.80.96:8080')], contextPath: 'qaenv', war: '**/*.war'
+   }
+
 }
