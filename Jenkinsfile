@@ -9,16 +9,6 @@ stage('continuous donwload')
    sh 'mvn sonar:sonar'
 }
  stage("Quality Gate"){
-  timeout(time: 1, unit: 'HOURS') 
 def qg = waitForQualityGate()
   }
    
-    sh 'mvn package'
-    } 
-    
-   stage('continuous deployment')
-   {
-   deploy adapters: [tomcat8(credentialsId: 'dev', path: '', url: 'http://172.31.80.96:8080')], contextPath: 'qaenv', war: '**/*.war'
-   }   
-    
-}
