@@ -1,4 +1,4 @@
-node('built-in') 
+node
 {
    
 stage('continuous donwload')
@@ -10,10 +10,8 @@ stage('continuous donwload')
    sh 'mvn sonar:sonar'
  } 
    
-   stage('continuous build')
-   {
-    sh 'mvn package'
-    } 
+  
+    
     
   
 } 
