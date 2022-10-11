@@ -9,10 +9,10 @@ stage('continuous donwload')
    sh 'mvn sonar:sonar'
 }
  stage("Quality Gate"){
-  timeout(time: 1, unit: 'HOURS') {
+  timeout(time: 1, unit: 'HOURS') 
 def qg = waitForQualityGate()
   }
-  } 
+   
     sh 'mvn package'
     } 
     
